@@ -1,3 +1,11 @@
+/* =========================================================
+   ISFQC 2026
+   style.css (adaptado para index.html com base no custom.css)
+   ========================================================= */
+
+/* IMPORT FONT (Montserrat like custom.css) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
+
 /* RESET */
 * {
   margin: 0;
@@ -5,56 +13,128 @@
   box-sizing: border-box;
 }
 
-/* CORES */
+/* TOKENS */
 :root {
-  --green: #1f7a3a;
-  --red: #c62828;
+  /* Cores inspiradas no custom.css */
+  --olive: #697636;       /* headline green */
+  --red: #e22e1d;         /* highlight red */
   --black: #111111;
   --white: #ffffff;
-  --gray: #f4f4f4;
+
+  --bg: #ffffff;
+  --muted: #666666;
+  --panel: #fafafa;
+  --panel-2: #f4f4f4;
+
+  /* Layout */
+  --max: 960px;
+  --radius: 10px;
 }
 
 /* BASE */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-  background-color: var(--white);
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background-color: var(--bg);
   color: var(--black);
   line-height: 1.7;
 }
 
-/* HEADER */
+/* LINKS */
+a {
+  color: var(--olive);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:hover {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 32px;
-  background-color: var(--green);
-  border-bottom: 4px solid var(--red);
+
+  padding: 8px 20px;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none;
+
+
+  border-bottom: 1px solid #eeeeee;
 }
 
 .logo {
-  width: 150px;
+  width: 100px;
   height: auto;
 }
 
 /* NAV */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .nav a {
-  color: var(--white);
+  color: var(--black);
   text-decoration: none;
-  margin-left: 22px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
 }
 
 .nav a:hover {
   color: var(--red);
+  text-decoration: none;
 }
 
-/* HERO */
+/* CTA */
+.registration-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+  border-radius: 8px;
+
+  background-color: var(--red);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.registration-link:hover {
+  background-color: #c92517;
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
 .hero {
   position: relative;
-  height: 420px;
-  background-image: url("images/DJI_00312.jpg");
+  min-height: 75vh; /* inspirado no custom.css */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("images/banner.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -62,146 +142,231 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
+  /* gradiente parecido com o template */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.22));
 }
 
 .hero-content {
   position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
+  max-width: 980px;
+  padding: 28px 18px;
   text-align: center;
-  padding: 20px;
+  color: var(--white);
 }
 
 .hero h1 {
-  font-size: 3.2rem;
-  color: var(--green);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.3px;
   margin-bottom: 12px;
+  color: var(--white);
+}
+
+.event-date {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero p {
-  font-size: 1.3rem;
-  max-width: 700px;
-}
-
-/* SECTIONS */
-.section {
-  padding: 70px 20px;
-  max-width: 960px;
+  font-size: clamp(15px, 2.2vw, 20px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 780px;
   margin: 0 auto;
 }
 
-.section:nth-child(even) {
-  background-color: var(--gray);
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+.section {
+  padding: 70px 20px;
+}
+
+.section > * {
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section:nth-of-type(even) {
+  background-color: var(--panel);
 }
 
 .section h2 {
-  color: var(--green);
-  margin-bottom: 20px;
-  border-left: 6px solid var(--red);
+  font-size: clamp(26px, 3.2vw, 32px);
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--olive);
+
+  margin-bottom: 18px;
   padding-left: 14px;
-  font-size: 1.8rem;
+  border-left: 6px solid var(--red);
 }
 
 .section p {
   margin-bottom: 16px;
+  color: #1a1a1a;
   text-align: justify;
 }
 
-/* CONTACT */
+/* Placeholder box */
+.placeholder-box {
+  max-width: var(--max);
+  margin: 26px auto 0 auto;
+  padding: 34px 24px;
+  text-align: center;
+
+  background-color: var(--panel-2);
+  border: 2px dashed var(--olive);
+  border-radius: var(--radius);
+}
+
+.placeholder-box p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
 .contact-list {
   list-style: none;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .contact-list li {
   margin-bottom: 12px;
-  font-size: 1.05rem;
+  font-size: 15px;
 }
 
-.contact-list a {
-  color: var(--green);
-  text-decoration: none;
-  font-weight: 600;
+.contact-list strong {
+  font-weight: 700;
 }
 
-.contact-list a:hover {
-  color: var(--red);
-  text-decoration: underline;
+/* =========================================================
+   SPONSORS
+   ========================================================= */
+.sponsors {
+  background-color: #fafafa;
 }
 
-/* FOOTER */
-.footer {
-  background-color: var(--black);
-  color: var(--white);
-  text-align: center;
-  padding: 24px 16px;
-  margin-top: 40px;
-  font-size: 0.9rem;
+.sponsor-level {
+  max-width: var(--max);
+  margin: 0 auto 26px auto;
 }
 
-/* ORGANIZATION SECTION */
+.sponsor-level h3 {
+  font-weight: 800;
+  color: var(--olive);
+  margin-bottom: 8px;
+  padding-left: 10px;
+  border-left: 5px solid var(--red);
+}
+
+.tba {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* =========================================================
+   ORGANIZATION
+   ========================================================= */
 .organization {
-  background-color: #e6e6e6;
+  background-color: #f0f0f0;
   padding: 70px 20px;
   text-align: center;
 }
 
 .organization h2 {
-  color: var(--green);
-  font-size: 1.9rem;
-  margin-bottom: 40px;
-  border-left: 6px solid var(--red);
   display: inline-block;
+  margin-bottom: 34px;
   padding-left: 14px;
+  border-left: 6px solid var(--red);
+  color: var(--olive);
+  font-weight: 800;
+  font-size: clamp(26px, 3.2vw, 32px);
 }
 
 .org-logos {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 28px;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
 }
 
 .org-card {
   background-color: var(--white);
-  padding: 25px;
-  border-radius: 8px;
-  max-width: 260px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 22px;
+  border-radius: var(--radius);
+  width: min(320px, 100%);
+
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
 .org-card img {
   max-height: 110px;
   width: auto;
-  margin-bottom: 15px;
+  margin: 0 auto 12px auto;
+  display: block;
 }
 
 .org-card p {
-  font-size: 0.95rem;
-  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--black);
+  text-align: center;
 }
 
 .venue {
-  margin-top: 30px;
-  font-size: 1.05rem;
+  margin-top: 18px;
+  font-size: 15px;
 }
 
-.registration-link {
-  background-color: var(--red);
-  padding: 8px 14px;
-  border-radius: 4px;
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  background-color: #292929; /* semelhante ao custom.css */
+  color: var(--white);
+  text-align: center;
+  padding: 26px 16px;
+  font-size: 13px;
 }
 
-.registration-link:hover {
-  background-color: var(--white);
-  color: var(--red);
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 860px) {
+  .site-header {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .logo {
+    width: 135px;
+  }
+
+  .section {
+    padding: 60px 16px;
+  }
 }
 
+@media (max-width: 480px) {
+  .registration-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
