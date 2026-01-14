@@ -615,3 +615,87 @@ a:hover {
 .gallery-grid img:hover {
   transform: scale(1.04);
 }
+
+/* ===============================
+   MOBILE LAYOUT
+   =============================== */
+
+@media (max-width: 768px) {
+
+  .site-header {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .nav {
+    gap: 8px;
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+    padding: 4px 6px;
+  }
+}
+
+  /* Sections */
+  .section {
+    padding: 40px 16px;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Speakers */
+  .speakers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .speaker-card {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .speaker-photo {
+    height: 260px;
+  }
+
+  /* Sponsors */
+  .sponsor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 200px;
+  }
+
+  /* Buttons */
+  .btn,
+  button {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: static !important;
+    top: auto !important;
+  }
+}
