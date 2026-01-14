@@ -54,7 +54,7 @@ body {
 .hero {
   position: relative;
   height: 420px;
-  background-image: url("images/DJI_0031.jpg");
+  background-image: url("images/DJI_00312.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -204,3 +204,4 @@ body {
   background-color: var(--white);
   color: var(--red);
 }
+
