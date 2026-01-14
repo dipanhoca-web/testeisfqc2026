@@ -699,3 +699,15 @@ a:hover {
     top: auto !important;
   }
 }
+
+@media (max-width: 768px) {
+
+  header,
+  .site-header,
+  .header,
+  .navbar {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
