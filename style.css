@@ -370,3 +370,248 @@ a:hover {
     justify-content: center;
   }
 }
+/* ===============================
+   SPEAKERS
+   =============================== */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.speaker-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.speaker-photo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 14px auto;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+.speaker-photo {
+  border: 3px solid var(--olive);
+}
+
+.speaker-card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.speaker-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ===============================
+   SPONSORS GRID
+   =============================== */
+/* ===============================
+   SPONSORS (FIXED LAYOUT)
+   =============================== */
+
+.sponsors {
+  text-align: center;
+}
+
+/* cada nível */
+.sponsor-group {
+  margin-bottom: 50px;
+}
+
+/* título do nível */
+.sponsor-group h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--green);
+  border-bottom: 2px solid var(--red);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* grid de logos */
+.sponsor-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* card do logo */
+.sponsor-item {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 18px;
+  height: 120px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e5e5;
+}
+
+/* imagem do logo */
+.sponsor-item img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.sponsor-placeholder {
+  background-color: var(--panel-2);
+  border: 2px dashed var(--olive);
+  border-radius: var(--radius);
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: var(--muted);
+
+}
+
+
+/* ===============================
+   ORGANIZATION
+   =============================== */
+.organization {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.org-logos {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.org-card {
+  background-color: var(--white);
+  padding: 25px;
+  border-radius: var(--radius);
+  max-width: 260px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.org-card img {
+  max-height: 110px;
+  margin-bottom: 14px;
+}
+
+.org-card p {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.venue {
+  margin-top: 30px;
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   ABSTRACT CTA BUTTON
+   =============================== */
+.abstract-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.abstract-link {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transition: all 0.25s ease;
+}
+
+.abstract-link:hover {
+  background-color: var(--green);
+  transform: translateY(-2px);
+}
+
+
+/* ===============================
+   LANGUAGE NOTICE
+   =============================== */
+.language-notice {
+  background-color: #f4f4f4;
+  border-top: 2px solid var(--green);
+  padding: 20px;
+  text-align: center;
+}
+
+.language-notice p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+.language-notice {
+  background-color: #e8f5e9;
+}
+
+
+.language-notice strong {
+  margin-right: 4px;
+}
+
+.language-notice p {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+   PHOTO GALLERY
+   =============================== */
+
+.gallery-intro {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  color: var(--muted);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.04);
+}
