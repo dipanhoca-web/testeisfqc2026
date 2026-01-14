@@ -54,7 +54,7 @@ body {
 .hero {
   position: relative;
   height: 420px;
-  background-image: url("images/DJI_0031.jpg");
+  background-image: url("images/DJI_0031.JPG");
   background-size: cover;
   background-position: center;
 }
@@ -63,7 +63,7 @@ body {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(10px);
 }
 
 .hero-content {
@@ -144,5 +144,6 @@ body {
   margin-top: 40px;
   font-size: 0.9rem;
 }
+
 
 
