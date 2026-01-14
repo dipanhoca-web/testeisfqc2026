@@ -1,0 +1,147 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CORES */
+:root {
+  --green: #1f7a3a;
+  --red: #c62828;
+  --black: #111111;
+  --white: #ffffff;
+  --gray: #f4f4f4;
+}
+
+/* BASE */
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.7;
+}
+
+/* HEADER */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: var(--green);
+  border-bottom: 4px solid var(--red);
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+/* NAV */
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.nav a:hover {
+  color: var(--red);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 420px;
+  background-image: url("images/DJI_0031.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.hero-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 70px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section:nth-child(even) {
+  background-color: var(--gray);
+}
+
+.section h2 {
+  color: var(--green);
+  margin-bottom: 20px;
+  border-left: 6px solid var(--red);
+  padding-left: 14px;
+  font-size: 1.8rem;
+}
+
+.section p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+/* CONTACT */
+.contact-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.contact-list li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.contact-list a {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-list a:hover {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 24px 16px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
