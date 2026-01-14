@@ -63,7 +63,7 @@ body {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(1px);
 }
 
 .hero-content {
@@ -144,4 +144,5 @@ body {
   margin-top: 40px;
   font-size: 0.9rem;
 }
+
 
