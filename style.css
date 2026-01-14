@@ -711,3 +711,108 @@ a:hover {
   }
 }
 
+@media (max-width: 768px) {
+
+  .logo {
+    height: auto;
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .site-header img {
+    max-width: 140px;
+  }
+}
+
+
+/* ===============================
+   SPEAKERS & ORGANIZERS PHOTOS
+   =============================== */
+
+.speaker-photo,
+.organizer-photo {
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+  background-position: center 15%;
+  background-repeat: no-repeat;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 768px) {
+  .speaker-photo,
+  .organizer-photo {
+    height: 280px;
+  }
+}
+
+.speaker-photo img,
+.organizer-photo img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: var(--radius);
+}
+
+/* ===============================
+   FIX SPEAKERS GRID
+   =============================== */
+
+.speakers-grid,
+.organizers-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 24px !important;
+  align-items: stretch;
+}
+
+.speaker-card,
+.organizer-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.speaker-photo,
+.organizer-photo {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .speakers-grid,
+  .organizers-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===============================
+   ROUND PHOTOS (SPEAKERS & ORGANIZERS)
+   =============================== */
+
+.speaker-photo,
+.organizer-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin: 0 auto 14px auto;
+}
+
+/* Desktop cards alignment */
+.speaker-card,
+.organizer-card {
+  text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .speaker-photo,
+  .organizer-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
