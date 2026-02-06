@@ -9,34 +9,83 @@
 <body>
 
 <header class="site-header">
-  <img src="images/logo.png" alt="ISFQC 2026 Logo" class="logo" />
+  <img src="images/logoisfqc.jpg" alt="ISFQC 2026 Logo" class="logo" />
 
-  <nav class="nav">
+   <nav class="nav">
     <a href="index.html">Home</a>
-    <a href="gallery.html" class="active">Photo Gallery</a>
-<a href="https://doity.com.br/ii-workshop-medir-para-gerenciar-edicao-silagem" class="registration-link">Registration</a>
+    
+    <div class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Symposium 2026 &#9662;</a> 
+      <div class="dropdown-content">
+        <a href="index.html#about">About</a>
+        <a href="index.html#organizers">Organizers</a>
+        <a href="index.html#organization">Organization</a> <a href="#sponsors">Sponsors</a>
+        <a href="program.html">Program</a>
+        <a href="index.html#speakers">Speakers</a>
+      </div>
+    </div>
+
+    <a href="index.html#abstracts">Abstracts</a>
+    <a href="venue.html">Venue</a>
+
+    <div class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn active-page">Past Editions &#9662;</a> 
+      <div class="dropdown-content">
+        <a href="proceedings.html">Proceedings</a>
+        <a href="gallery.html">Photo Gallery</a>
+      </div>
+    </div>
+
+    <a href="#contact">Contact</a>
+    <a href="https://doity.com.br/ii-workshop-medir-para-gerenciar-edicao-silagem" class="registration-link">Registration</a>
   </nav>
-</header>
+</header>>
+
 
 <section class="section">
   <h2>Photo Gallery</h2>
 
   <p class="gallery-intro">
-    Moments from previous editions, field activities, and scientific meetings
-    related to the International Symposium on Forage Quality and Conservation.
+    Selected moments from scientific meetings, field activities, and
+    academic events related to the International Symposium on Forage Quality
+    and Conservation.
   </p>
 
-  <div class="gallery-grid">
-    <img src="images/gallery/photo1.jpg" alt="ISFQC scientific meeting">
-    <img src="images/gallery/photo2.jpg" alt="Forage research field activity">
-    <img src="images/gallery/photo3.jpg" alt="Poster session">
-    <img src="images/gallery/photo4.jpg" alt="Conference audience">
+  <div class="gallery-masonry">
+    <img src="images/gallery/1.jpg" alt="Scientific meeting">
+    <img src="images/gallery/2.jpg" alt="Field research activity">
+    <img src="images/gallery/3.jpg" alt="Poster session">
+    <img src="images/gallery/4.jpg" alt="Conference audience">
+    <img src="images/gallery/5.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/6.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/7.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/8.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/9.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/10.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/11.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/12.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/13.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/14.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/15.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/16.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/17.jpg" alt="Forage conservation experiment">
+<img src="images/gallery/18.jpg" alt="Forage conservation experiment">
+
   </div>
 </section>
 
 <footer class="footer">
   <p>© 2026 ISFQC — International Symposium on Forage Quality and Conservation</p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var gallery = document.querySelector('.gallery-masonry');
+    for (var i = gallery.children.length; i >= 0; i--) {
+      gallery.appendChild(gallery.children[Math.random() * i | 0]);
+    }
+  });
+</script>
 
 </body>
 </html>

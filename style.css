@@ -13,20 +13,19 @@
   box-sizing: border-box;
 }
 
-/* TOKENS */
 :root {
-  /* Cores inspiradas no custom.css */
-  --olive: #697636;       /* headline green */
-  --red: #e22e1d;         /* highlight red */
+  --green: #6f8f2e;        /* verde principal (logo) */
+  --green-dark: #4f6b1f;   /* hover / destaque */
+  --olive: #7a8f3a;        /* títulos */
+  --red: #c62828;          /* vermelho institucional */
   --black: #111111;
   --white: #ffffff;
 
   --bg: #ffffff;
+  --panel: #f7f8f5;
+  --panel-2: #eef1e8;
   --muted: #666666;
-  --panel: #fafafa;
-  --panel-2: #f4f4f4;
 
-  /* Layout */
   --max: 960px;
   --radius: 10px;
 }
@@ -103,26 +102,27 @@ a:hover {
   text-decoration: none;
 }
 
-/* CTA */
+/* CTA - GREEN (FORCED) */
 .registration-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 8px;
 
-  background-color: var(--red);
-  color: var(--white);
+  background-color: var(--green) !important;
+  color: var(--white) !important;
   font-weight: 700;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .registration-link:hover {
-  background-color: #c92517;
-  color: var(--white);
-  text-decoration: none;
+  background-color: #1e7a3a !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
 }
+
 
 /* =========================================================
    HERO
@@ -134,7 +134,7 @@ a:hover {
   align-items: center;
   justify-content: center;
 
-  background-image: url("images/banner.jpg");
+  background-image: url("images/banner1.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -597,24 +597,6 @@ a:hover {
   color: var(--muted);
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.04);
-}
 
 /* ===============================
    MOBILE LAYOUT
@@ -628,7 +610,8 @@ a:hover {
   }
 
   .logo {
-    height: 40px;
+    height: auto;
+    max-height: 42px;
   }
 
   .nav {
@@ -639,46 +622,23 @@ a:hover {
     font-size: 0.85rem;
     padding: 4px 6px;
   }
-}
 
-  /* Sections */
   .section {
     padding: 40px 16px;
   }
+}
 
   .section h2 {
     font-size: 1.6rem;
   }
 
-  /* Speakers */
-  .speakers-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .speaker-card {
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  .speaker-photo {
-    height: 260px;
-  }
-
+ 
   /* Sponsors */
   .sponsor-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Gallery */
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid img {
-    height: 200px;
-  }
-
-  /* Buttons */
+    /* Buttons */
   .btn,
   button {
     width: 100%;
@@ -725,35 +685,6 @@ a:hover {
   }
 }
 
-/* ===============================
-   SPEAKERS & ORGANIZERS PHOTOS
-   =============================== */
-
-.speaker-photo,
-.organizer-photo {
-  width: 100%;
-  height: 260px;
-  background-size: cover;
-  background-position: center 15%;
-  background-repeat: no-repeat;
-  border-radius: var(--radius);
-}
-
-@media (max-width: 768px) {
-  .speaker-photo,
-  .organizer-photo {
-    height: 280px;
-  }
-}
-
-.speaker-photo img,
-.organizer-photo img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  object-position: center 15%;
-  border-radius: var(--radius);
-}
 
 /* ===============================
    FIX SPEAKERS GRID
@@ -786,32 +717,560 @@ a:hover {
   }
 }
 
+
 /* ===============================
-   ROUND PHOTOS (SPEAKERS & ORGANIZERS)
+   NEW GALLERY TEMPLATE
    =============================== */
 
+.gallery-masonry {
+  column-count: 3;
+  column-gap: 18px;
+}
+
+.gallery-masonry img {
+  width: 100%;
+  margin-bottom: 18px;
+  border-radius: var(--radius);
+  break-inside: avoid;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.gallery-masonry img:hover {
+  transform: scale(1.02);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .gallery-masonry {
+    column-count: 2;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .gallery-masonry {
+    column-count: 1;
+  }
+}
+
+/* ===============================
+   CTA REGISTRATION BUTTON (FIXED)
+   =============================== */
+
+a.registration-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 18px;
+  border-radius: 8px;
+
+  background-color: var(--green) !important;
+  color: #ffffff !important;
+
+  font-weight: 700;
+  text-decoration: none !important;
+  border: none;
+}
+
+a.registration-link:hover,
+a.registration-link:focus {
+  background-color: #1e7a3a !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* SPEAKERS & ORGANIZERS PHOTOS */
 .speaker-photo,
 .organizer-photo {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 14px auto;
+
   border-radius: 50%;
   background-size: cover;
-  background-position: center top;
+  background-position: center 15%;
   background-repeat: no-repeat;
-  margin: 0 auto 14px auto;
-}
 
-/* Desktop cards alignment */
-.speaker-card,
-.organizer-card {
-  text-align: center;
+  border: 3px solid var(--green);
 }
-
-/* Mobile adjustments */
 @media (max-width: 768px) {
   .speaker-photo,
   .organizer-photo {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
   }
+}
+
+.gallery-masonry {
+  column-count: 3;
+  column-gap: 18px;
+}
+
+.gallery-masonry img {
+  width: 100%;
+  margin-bottom: 18px;
+  border-radius: var(--radius);
+  break-inside: avoid;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 1024px) {
+  .gallery-masonry { column-count: 2; }
+}
+
+@media (max-width: 768px) {
+  .gallery-masonry { column-count: 1; }
+}
+
+a.registration-link {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+}
+
+a.registration-link:hover {
+  background-color: var(--green-dark);
+}
+
+
+.proceedings-list {
+  margin-top: 30px;
+  padding-left: 20px;
+}
+
+.proceedings-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.proceedings-list a {
+  color: var(--red);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.proceedings-list a:hover {
+  text-decoration: underline;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Smaller video for About section */
+.video-small {
+  max-width: 560px;   /* tamanho controlado */
+  margin: 30px auto;  /* centraliza */
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .video-small {
+    max-width: 100%;
+  }
+}
+
+/* About video – controlled size */
+.about-video {
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  margin: 30px auto;
+}
+
+.about-video iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-video {
+    max-width: 100%;
+  }
+}
+
+/* YouTube thumbnail link (About section) */
+.youtube-thumb {
+  position: relative;
+  display: block;
+  max-width: 560px;
+  margin: 30px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.youtube-thumb img {
+  width: 100%;
+  display: block;
+}
+
+/* Overlay */
+.youtube-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.youtube-overlay span {
+  background: #ff0000;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Hover effect */
+.youtube-thumb:hover .youtube-overlay {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .youtube-thumb {
+    max-width: 100%;
+  }
+}
+
+.video-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.text-center p {
+  text-align: center;
+}
+
+/* Container do Dropdown - mantém o botão alinhado com o menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilo do botão do Dropdown (para parecer igual aos outros links) */
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: inherit; /* Usa a mesma cor dos seus links */
+  background-color: transparent;
+  font-family: inherit; /* Usa a mesma fonte do site */
+  margin: 0;
+  cursor: pointer;
+  padding: 14px 16px; /* Ajuste conforme o espaçamento do seu menu atual */
+}
+
+/* O conteúdo do menu (escondido por padrão) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Cor ao passar o mouse nos links do dropdown */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Mostra o menu ao passar o mouse no container .dropdown */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Efeito para Organization e Sponsors */
+.org-card, .sponsor-item {
+  transition: transform 0.3s ease; /* Animação suave de 0.3s */
+  display: block; /* Garante que o link se comporte como um bloco */
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Mantém a cor do texto original */
+}
+
+/* O que acontece quando passa o mouse (Hover) */
+.org-card:hover, .sponsor-item:hover {
+  transform: scale(1.05); /* Aumenta o tamanho em 5% */
+  cursor: pointer; /* Mostra o ícone de mãozinha */
+}
+
+/* Garante que não apareça linha sublinhada ao passar o mouse */
+.org-card, 
+.sponsor-item {
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.org-card:hover, 
+.sponsor-item:hover {
+  text-decoration: none !important;
+  border: none !important;
+  transform: scale(1.05); /* Mantém o efeito de zoom */
+  cursor: pointer;
+}
+
+/* Atualize este bloco no seu CSS para incluir .speaker-card */
+.org-card, 
+.sponsor-item,
+.speaker-card { /* Adicionado aqui */
+  text-decoration: none !important;
+  border: none !important;
+  display: block; /* Garante estrutura correta */
+  color: inherit; /* Mantém a cor do texto original */
+  transition: transform 0.3s ease;
+}
+
+.org-card:hover, 
+.sponsor-item:hover,
+.speaker-card:hover { /* Adicionado aqui */
+  text-decoration: none !important;
+  border: none !important;
+  transform: scale(1.05); /* Efeito de zoom */
+  cursor: pointer;
+}
+
+/* =========================================
+   ESTILOS DA PÁGINA DE PROGRAMAÇÃO (SCHEDULE)
+   ========================================= */
+
+.program-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.program-day {
+  margin-bottom: 50px;
+}
+
+.day-title {
+  background-color: #4CAF50; /* Verde do tema */
+  color: white;
+  padding: 15px;
+  margin: 0;
+  border-radius: 8px 8px 0 0;
+  font-size: 1.5rem;
+  font-family: inherit; /* Garante a mesma fonte do site */
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.schedule-table th, .schedule-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.schedule-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+  width: 20%; /* Largura da coluna de hora */
+}
+
+.schedule-table tr:hover {
+  background-color: #f9f9f9; /* Efeito ao passar o mouse na linha */
+}
+
+.schedule-time {
+  font-weight: bold;
+  color: #4CAF50;
+  white-space: nowrap; /* Evita que a hora quebre linha */
+}
+
+.speaker-name {
+  font-style: italic;
+  color: #666;
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+/* Responsividade para celular */
+@media (max-width: 600px) {
+  .schedule-table th, .schedule-table td {
+    display: block;
+    width: 100%;
+  }
+  .schedule-table th {
+    background-color: transparent;
+    color: #4CAF50;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .schedule-table td {
+    padding-top: 5px;
+  }
+}
+
+/* =========================================
+   ESTILOS DA PÁGINA VENUE (LOCAL DO EVENTO)
+   ========================================= */
+
+.venue-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.venue-title {
+  color: #4CAF50; /* Verde do tema */
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.venue-subtitle {
+  margin-bottom: 20px;
+  color: #333;
+  margin-top: 40px;
+  font-size: 1.5rem;
+}
+
+.venue-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Botão do Hotel */
+.btn-hotel {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-hotel:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Galeria de Fotos */
+.venue-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.venue-gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.venue-gallery img:hover {
+  transform: scale(1.03);
+}
+
+
+/* Classe auxiliar para destacar link ativo no menu */
+.active-page {
+  font-weight: bold;
+  color: #4CAF50 !important;
+}
+
+/* =========================================
+   ESTILOS DA PÁGINA "EM CONSTRUÇÃO"
+   ========================================= */
+
+.construction-container {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.construction-container img {
+  max-width: 100%;
+  height: auto;
+  width: 400px; /* Ajuste o tamanho da imagem aqui */
+  margin-bottom: 30px;
+}
+
+.construction-text {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.construction-subtext {
+  color: #888;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Botão de voltar */
+.btn-back {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #45a049;
 }
