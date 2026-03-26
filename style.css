@@ -168,7 +168,7 @@ a:hover {
 .event-acronym {
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 800; /* Negrito extra forte */
-  color: #fffff; /* Verde claro elegante (combina com o tema e destaca na foto) */
+  color: #fffff; 
   letter-spacing: 2px; /* Letras um pouquinho mais separadas */
   margin-bottom: 30px; /* Dá um respiro até a data */
 }
@@ -414,9 +414,33 @@ a:hover {
 
 .speaker-card p {
   font-size: 14px;
+text-align: center;
   color: var(--muted);
 }
 
+/* Estilo do Nome APENAS para os Palestrantes */
+#speakers .speaker-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #2c3e50;
+  text-align: center;
+  margin: 20px 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+/* Estilo da Afiliação APENAS para os Palestrantes (Verde, Itálico e Mais Grosso) */
+#speakers .speaker-card p {
+  font-size: 1.1rem; /* Aumentei um pouquinho o tamanho */
+  font-weight: 700; /* Aqui está o segredo: negrito forte para não ficar apagado */
+  color: #6f8f2e; /* O verde elegante de volta */
+  text-align: center;
+  margin: 5px auto 0 auto;
+  line-height: 1.4;
+  max-width: 90%;
+  font-style: italic; /* O itálico de volta */
+  text-transform: none; /* Tira o efeito de tudo MAIÚSCULO */
+  letter-spacing: normal; /* Volta o espaçamento normal das letras */
+}
 /* ===============================
    SPONSORS GRID
    =============================== */
@@ -1274,4 +1298,147 @@ a.registration-link:hover {
 
 .btn-back:hover {
   background-color: #45a049;
+}
+
+/* =========================================
+   ESTILOS DA SECÇÃO "DATES TO REMEMBER"
+   ========================================= */
+
+.dates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.date-card {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid #6f8f2e; /* Verde do tema */
+}
+
+.date-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Cartão de destaque para a data do evento (Vermelho) */
+.date-card.highlight-date {
+  border-top: 4px solid #c62828; 
+  background-color: #fffafa; /* Fundo levemente avermelhado */
+}
+
+.date-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.date-card h3 {
+  font-size: 1.1rem;
+  color: #7a8f3a;
+  margin-bottom: 10px;
+}
+
+.date-card.highlight-date h3 {
+  color: #c62828;
+}
+
+.date-card p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #111;
+  margin: 0;
+}
+
+/* =========================================
+   REGISTRATION FEES (DESIGN ELEGANTE EM LISTA)
+   ========================================= */
+
+.fees-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaço entre cada linha */
+}
+
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  border-left: 5px solid #6f8f2e; /* Linha verde bonita na lateral */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fee-row:hover {
+  transform: translateX(8px); /* Dá um saltinho subtil para o lado ao passar o rato */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-left-color: #4f6b1f; /* Verde fica mais escuro */
+}
+
+.fee-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.fee-icon {
+  font-size: 1.8rem;
+}
+
+.fee-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+.fee-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #6f8f2e;
+}
+
+/* Botão de Registo */
+.btn-register {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: #6f8f2e;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-register:hover {
+  background-color: #4f6b1f; 
+}
+
+/* Adaptação para o telemóvel ficar perfeito */
+@media (max-width: 600px) {
+  .fee-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+  }
+  .fee-price {
+    align-self: flex-end; /* O preço vai para o cantinho direito em baixo no telemóvel */
+  }
+}
+/* Deixa a palavra "each" menor e mais discreta ao lado do preço */
+.fee-each {
+  font-size: 0.55em; /* Deixa a letra com quase metade do tamanho do preço */
+  font-weight: 400; /* Tira o negrito pesado */
+  color: #777; /* Deixa num tom de cinza para não roubar a atenção do valor */
+  margin-left: 4px; /* Dá um pequeno espaço entre o zero e o each */
 }
