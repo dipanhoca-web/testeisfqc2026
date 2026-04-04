@@ -1442,3 +1442,19 @@ a.registration-link:hover {
   color: #777; /* Deixa num tom de cinza para não roubar a atenção do valor */
   margin-left: 4px; /* Dá um pequeno espaço entre o zero e o each */
 }
+/* =========================================
+   TOP BAR - AVISO DE IDIOMA
+   ========================================= */
+
+.top-bar-language {
+  background-color: #4a5d23; /* Azul escuro/cinza muito elegante */
+  color: #ffffff; /* Texto branco para dar contraste */
+  text-align: center;
+  padding: 6px 15px; /* Bem fininha, ocupando pouco espaço vertical */
+  font-size: 0.85rem; /* Letra mais pequena que o texto normal */
+  letter-spacing: 0.5px;
+}
+
+.top-bar-language p {
+  margin: 0; /* Remove as margens padrão do parágrafo para não alargar a barra */
+}
