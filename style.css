@@ -173,12 +173,13 @@ a:hover {
   margin-bottom: 30px; /* Dá um respiro até a data */
 }
 
-/* DATA E LOCAL (Discretos e limpos embaixo) */
+/* DATA E LOCAL (Realçados no topo) */
 .event-date, .event-location {
-  font-size: 18px;
-  font-weight: 400; /* Fonte normal, sem negrito */
-  margin-bottom: 5px;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 22px; /* Aumentámos a fonte (antes era 18px) */
+  font-weight: 700; /* Alterado para negrito (antes era 400) */
+  margin-bottom: 8px; /* Dá um pouco mais de respiro entre as linhas */
+  color: #ffffff; /* Branco puro para o máximo de destaque */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); /* Sombra suave para o texto não desaparecer na foto de fundo */
 }/* =========================================================
    SECTIONS
    ========================================================= */
@@ -676,7 +677,7 @@ text-align: center;
     text-align: center;
     padding: 24px 16px;
   }
-}
+
 
 @media (max-width: 768px) {
   .site-header {
@@ -1457,4 +1458,719 @@ a.registration-link:hover {
 
 .top-bar-language p {
   margin: 0; /* Remove as margens padrão do parágrafo para não alargar a barra */
+}
+
+
+/* =========================================
+   PROGRAM SCHEDULE STYLES
+   ========================================= */
+
+.program-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.program-day {
+  margin-bottom: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.program-day-title {
+  background-color: #4a5d23; /* Verde do evento */
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px 8px 0 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.program-list {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.program-item {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.program-item:last-child {
+  border-bottom: none;
+}
+
+.program-item:hover {
+  background-color: #fcfdfa;
+}
+
+.program-time {
+  flex: 0 0 140px; /* Largura fixa para os horários */
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.program-info {
+  flex: 1;
+}
+
+.program-title {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.program-speaker {
+  margin: 0;
+  color: #6f8f2e; /* Verde mais claro para o autor */
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* Diferencia as pausas/intervalos do resto da programação */
+.program-break {
+  background-color: #f7f8f5;
+}
+
+.program-break .program-title {
+  color: #555;
+  font-weight: normal;
+}
+
+/* Responsividade: para telas menores de telemóvel */
+@media (max-width: 600px) {
+  .program-item {
+    flex-direction: column;
+  }
+  .program-time {
+    margin-bottom: 5px;
+    color: #4a5d23;
+  }
+}
+
+/* Destaque Exclusivo PLATINUM - Cor Diamante Minecraft */
+.premium-platinum .sponsor-item {
+  border: 4px solid #a3b8cc !important; /* Azul Diamante Minecraft */
+  box-shadow: 0 15px 35px rgba(81, 229, 229, 0.3) !important; /* Sombra com brilho de diamante */
+  padding: 40px !important; 
+  background: linear-gradient(145deg, #ffffff, #f0fdfd) !important; /* Fundo com um toque gelo super subtil */
+  
+  /* Destrava os tamanhos antigos para a caixa crescer */
+  width: 320px !important; 
+  height: auto !important; 
+  min-height: 180px !important;
+  
+  /* FORÇA A CENTRALIZAÇÃO ABSOLUTA DA IMAGEM */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.premium-platinum .sponsor-item img {
+  /* Destrava a imagem e empurra para o centro */
+  max-height: none !important; 
+  margin: 0 auto !important; 
+}
+
+.premium-platinum .sponsor-item:hover {
+  transform: translateY(-8px) !important; 
+  /* Brilho aumenta quando passa o rato por cima */
+  box-shadow: 0 22px 45px rgba(81, 229, 229, 0.45) !important;
+}
+/* =========================================
+   HIERARQUIA DE PATROCINADORES (GOLD E SILVER)
+   ========================================= */
+
+/* --- GOLD (Ouro) - Segundo Maior --- */
+.premium-gold .sponsor-item {
+  width: 260px !important;
+  min-height: 150px !important;
+  padding: 30px !important;
+  border: 2px solid #ffd700 !important; /* Borda dourada elegante */
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.15) !important;
+  
+  /* Centraliza a imagem */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.premium-gold .sponsor-item img {
+  max-height: 110px !important; /* Imagem maior que o normal */
+  margin: 0 auto !important;
+}
+
+.premium-gold .sponsor-item:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.25) !important;
+}
+
+/* --- SILVER (Prata) - Terceiro Maior --- */
+.premium-silver .sponsor-item {
+  width: 210px !important;
+  min-height: 130px !important;
+  padding: 20px !important;
+  border: 1px solid #b0b0b0 !important; /* Borda cinza suave */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
+  
+  /* Centraliza a imagem */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.premium-silver .sponsor-item img {
+  max-height: 90px !important; /* Imagem média */
+  margin: 0 auto !important;
+}
+
+.premium-silver .sponsor-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* =========================================
+   PAST EDITIONS (EDIÇÕES ANTERIORES)
+   ========================================= */
+
+.past-editions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.edition-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eaeaea;
+}
+
+.edition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.edition-header {
+  background-color: #6f8f2e; /* Verde do tema */
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.edition-year {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.edition-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Grelha dos Botões dentro do cartão */
+.edition-actions {
+  display: flex;
+  padding: 20px;
+  gap: 15px;
+}
+
+.btn-edition {
+  flex: 1; /* Faz os botões dividirem o espaço igualmente */
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Cores específicas para cada botão */
+.btn-proceedings {
+  background-color: #f0f4eb;
+  color: #4a5d23;
+  border: 1px solid #d2e0c1;
+}
+
+.btn-proceedings:hover {
+  background-color: #6f8f2e;
+  color: #ffffff;
+}
+
+.btn-gallery {
+  background-color: #f4f4f4;
+  color: #333333;
+  border: 1px solid #dcdcdc;
+}
+
+.btn-gallery:hover {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+/* Ajuste para telemóvel */
+@media (max-width: 400px) {
+  .edition-actions {
+    flex-direction: column;
+  }
+}
+/* =========================================
+   PROGRAMAÇÃO - ESTILO LINHA DO TEMPO
+   ========================================= */
+
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.timeline-day-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timeline-day-header h3 {
+  display: inline-block;
+  background-color: #6f8f2e;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(111, 143, 46, 0.3);
+}
+
+/* A linha vertical principal */
+.timeline {
+  position: relative;
+  padding-left: 40px; /* Espaço para a linha à esquerda */
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 14px; /* Posição exata da linha */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Cada evento na linha */
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* O "ponto" em cima da linha */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -35px; /* Puxa o ponto para cima da linha */
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 4px solid #6f8f2e; /* Borda verde */
+  border-radius: 50%;
+  z-index: 2;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-item:hover::before {
+  background-color: #c62828; /* Ponto fica vermelho ao passar o rato */
+  border-color: #c62828;
+  transform: scale(1.2);
+}
+
+/* A caixa de conteúdo */
+.timeline-content {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #6f8f2e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateX(10px); /* Dá um saltinho para a direita */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-time {
+  display: inline-block;
+  font-weight: 800;
+  color: #c62828; /* Vermelho do evento */
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  background-color: #fff0f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.timeline-title {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.timeline-speaker {
+  margin: 8px 0 0 0 !important;
+  color: #4a5d23 !important; /* Verde escuro forçado */
+  font-weight: 700 !important; 
+  font-size: 1.05rem !important; 
+  font-style: italic !important; 
+}
+
+/* Destaque para as pausas (Coffee Break, Lunch) */
+.break-item::before {
+  border-color: #b0b0b0;
+}
+.break-item .timeline-content {
+  background-color: #f9f9f9;
+  border-left-color: #b0b0b0;
+  box-shadow: none;
+  border: 1px solid #eee;
+  border-left: 5px solid #b0b0b0;
+}
+.break-item .timeline-time {
+  color: #666;
+  background-color: #eee;
+}
+/* =========================================
+   AGENDA COMPACTA (HOME PAGE)
+   ========================================= */
+
+.compact-agenda-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas iguais lado a lado */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.compact-day-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.compact-day-title {
+  background-color: #4a5d23; /* Verde do tema */
+  color: #ffffff;
+  margin: 0;
+  padding: 12px 20px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.compact-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.compact-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.compact-row:last-child {
+  border-bottom: none;
+}
+
+.compact-row:hover {
+  background-color: #f9fbf7;
+}
+
+.compact-time {
+  flex: 0 0 60px; /* Largura fixa bem pequena */
+  font-weight: 800;
+  color: #c62828; /* Vermelho do tema */
+  font-size: 0.95rem;
+}
+
+.compact-info {
+  flex: 1;
+}
+
+.compact-info h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1.3;
+}
+
+.compact-info span {
+  display: block;
+  font-size: 0.85rem;
+  color: #4f6b1f; /* Verde escuro do site */
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Estilo discreto para as pausas */
+.compact-break {
+  background-color: #f5f5f5;
+}
+.compact-break .compact-time {
+  color: #777;
+}
+.compact-break .compact-info h4 {
+  color: #555;
+  font-weight: normal;
+}
+
+/* Para ecrãs menores (Telemóvel) empilha os dias um sobre o outro */
+@media (max-width: 768px) {
+  .compact-agenda-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   ORGANIZATION - LINHA ÚNICA (4 COLUNAS)
+   ========================================= */
+
+.org-logos-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cria exatamente 4 colunas do mesmo tamanho */
+  gap: 20px; /* Espaço entre os cartões */
+  max-width: 1100px;
+  margin: 30px auto 0 auto;
+}
+
+.org-logos-row .org-card {
+  background-color: #ffffff;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border: 1px solid #e6e6e6;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none !important;
+  color: inherit;
+  
+  /* ESTAS 3 LINHAS FORÇAM A CENTRALIZAÇÃO NO TELEMÓVEL */
+  margin: 0 auto; 
+  width: 100%;
+  max-width: 280px; 
+}
+.org-logos-row .org-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.org-logos-row .org-card img {
+  max-height: 90px; /* Limita a altura para que todos os logos fiquem proporcionais */
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.org-logos-row .org-card p {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Responsividade: Como se comporta em ecrãs menores */
+@media (max-width: 900px) {
+  .org-logos-row {
+    grid-template-columns: repeat(2, 1fr); /* Tablets: 2 em 2 */
+  }
+}
+
+@media (max-width: 500px) {
+  .org-logos-row {
+    grid-template-columns: 1fr; /* Telemóvel: 1 por linha para não ficar minúsculo */
+  }
+}
+/* =========================================
+   TAXAS ONLINE - CORES INVERTIDAS + FAIXINHA
+   ========================================= */
+
+/* 1. INVERSÃO DE CORES DA LINHA */
+.fee-row.fee-online {
+  position: relative; /* Necessário para prender a faixinha aqui */
+  overflow: hidden;   /* Esconde o resto da faixinha que sai da borda */
+  background-color: #6f8f2e !important; /* O verde do tema como fundo */
+  border-left-color: #4a5d23 !important; /* Borda lateral verde escura */
+  box-shadow: 0 5px 15px rgba(111, 143, 46, 0.2) !important; /* Sombra verde elegante */
+}
+
+/* Força os textos (título e preço) a ficarem brancos */
+.fee-row.fee-online .fee-title,
+.fee-row.fee-online .fee-price,
+.fee-row.fee-online .fee-each {
+  color: #ffffff !important; 
+}
+
+/* 2. CRIAÇÃO DA FAIXINHA ONLINE (Vermelha Diagonal) */
+.fee-row.fee-online::before {
+  content: 'ONLINE';
+  position: absolute;
+  top: 10px;        /* Distância do topo */
+  right: -35px;     /* Empurra para a direita para rodar */
+  background-color: #c62828; /* Vermelho do tema */
+  color: #ffffff;
+  padding: 3px 35px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  transform: rotate(45deg); /* O segredo da inclinação */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+/* Efeito ao passar o rato (hover) */
+.fee-row.fee-online:hover {
+  background-color: #5d7a26 !important; /* Fica um bocadinho mais escuro */
+  transform: translateY(-3px) !important;
+}
+
+/* Responsividade: Garante que o preço não fica sob a faixa em telemóveis */
+@media (max-width: 600px) {
+  .fee-row.fee-online {
+    padding-right: 50px !important; /* Dá espaço para a faixa */
+  }
+}
+/* Remove o sublinhado e mantém a cor branca nos links do Hero */
+.event-location-link, .live-badge-link {
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+/* Efeito de destaque ao passar o rato na localização */
+.event-location-link:hover .event-location {
+  color: #dcedc8; /* Um verde bem clarinho para indicar que é clicável */
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Ajuste no Badge para parecer um botão real */
+.live-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid #ffffff;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.live-badge:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* O ponto a piscar (mantido da versão anterior) */
+.pulse-icon {
+  color: #ff1744;
+  margin-right: 5px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+/* AJUSTE PARA CORRIGIR O ALINHAMENTO (Um por linha) */
+
+.event-location-link {
+  display: block; /* Força a localização a ser uma linha inteira */
+  text-decoration: none !important;
+  margin-bottom: 5px; /* Espaço entre a localização e o botão de baixo */
+}
+
+.live-badge-link {
+  display: inline-block; /* O link do badge pode ser inline-block para não ocupar a largura toda da tela */
+  text-decoration: none !important;
+  margin-top: 15px; /* Garante o respiro para o elemento de cima */
+}
+
+/* Garante que o texto da localização continue branco e bonito */
+.event-location {
+  display: inline-block; /* Para o efeito de hover funcionar só no texto */
+  margin: 0 auto;
+}
+
+/* Efeito de hover na localização */
+.event-location-link:hover .event-location {
+  color: #dcedc8;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+/* =========================================
+   LINHA DO TEMPO EM DUAS COLUNAS
+   ========================================= */
+
+/* No computador, divide em 2 colunas */
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1200px; /* Aumentamos um pouco o limite para caberem os dois */
+  margin: 0 auto;
+}
+
+/* Ajuste nos cabeçalhos dos dias para não ficarem colados */
+.timeline-day-header {
+  margin-top: 0 !important; /* Remove a margem superior que usamos antes */
+  margin-bottom: 20px;
+}
+
+/* Garante que a linha do tempo não fique muito apertada */
+.timeline-content {
+  padding: 15px !important;
+}
+
+/* RESPONSIVIDADE: No telemóvel, volta a ser uma coluna só */
+@media (max-width: 992px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
 }
