@@ -2295,12 +2295,16 @@ a.registration-link[download] {
   text-align: center;
 }
 
+/* Mantém os 4 na mesma linha */
 .sponsor-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; 
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  overflow-x: auto; 
 }
 
 /* Base comum para todos os cards */
@@ -2329,10 +2333,17 @@ a.registration-link[download] {
 /* --- HIERARQUIA DE TAMANHOS E CORES --- */
 
 /* DIAMOND (O maior) */
+/* A caixa de cada logo */
 .tier-diamond .sponsor-item {
-  width: 300px;
+  flex: 0 1 280px; 
   height: 180px;
-  border: 3px solid #a3b8cc !important; /* Cor Diamante */
+  border: 3px solid #a3b8cc !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden !important; /* ISSO É O SEGREDO: O que passar daqui será cortado! */
 }
 
 /* PLATINUM */
