@@ -2411,3 +2411,19 @@ a.registration-link[download] {
   color: #ffffff !important;
   box-shadow: 0 4px 10px rgba(74, 93, 35, 0.2);
 }
+
+/* ====== AJUSTES PARA CELULAR (Telas menores que 768px) ====== */
+@media (max-width: 768px) {
+  .sponsor-grid {
+    flex-direction: column !important; /* Muda de linha (row) para coluna (um embaixo do outro) */
+    overflow-x: hidden; 
+    padding: 0 20px; 
+  }
+
+  .tier-diamond .sponsor-item {
+    flex: 0 1 auto !important; /* Tira aquela regra de dividir a tela */
+    width: 100% !important; /* Deixa a caixa ocupar a largura da tela do celular... */
+    max-width: 320px !important; /* ...mas limitando a 320px para não ficar esticado demais */
+    height: 180px !important; /* Volta para a altura grandona original! */
+  }
+}
